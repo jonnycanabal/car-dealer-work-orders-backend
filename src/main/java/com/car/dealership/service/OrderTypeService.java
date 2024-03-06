@@ -14,5 +14,5 @@ public interface OrderTypeService {
 
     OrderType updateOrderType(Long id, OrderType orderType);
 
-    void deleteById(Long id);
+    void deleteById(Long id) throws Exception;
 }

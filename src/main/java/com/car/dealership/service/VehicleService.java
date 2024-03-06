@@ -14,5 +14,5 @@ public interface VehicleService {
 
     Vehicle updateVehicle(Long id, Vehicle vehicle);
 
-    void deleteById(Long id);
+    void deleteById(Long id) throws Exception;
 }

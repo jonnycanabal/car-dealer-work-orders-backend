@@ -1,5 +1,6 @@
 package com.car.dealership.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +26,10 @@ public class OrderType {
     @JsonIgnoreProperties("orderTypes")
     private List<WorkOrder> workOrders = new ArrayList<>();
 
+//    @OneToMany(mappedBy = "orderType", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<WorkOrderItem> workOrderItems = new ArrayList<>();
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "America/Bogota")
     @Column(name = "create_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class OrderTypeServiceImplement implements OrderTypeService {
@@ -21,7 +22,11 @@ public class OrderTypeServiceImplement implements OrderTypeService {
 
     @Override
     public OrderType findById(Long id) {
-        return orderTypeRepository.findById(id).get();
+
+        OrderType currentOrderType = orderTypeRepository.findById(id).orElseThrow(() -> new
+                NoSuchElementException("Order Type not found!"));
+
+        return currentOrderType;
     }
 
     @Override
@@ -33,12 +38,25 @@ public class OrderTypeServiceImplement implements OrderTypeService {
     @Override
     @Transactional
     public OrderType updateOrderType(Long id, OrderType orderType) {
-        return orderTypeRepository.save(orderType);
+
+        OrderType currentOrderType = orderTypeRepository.findById(id).orElseThrow(() -> new
+                NoSuchElementException("Order Type not found!"));
+
+        currentOrderType.setOrderName(orderType.getOrderName() != null ? orderType.getOrderName() : currentOrderType.getOrderName());
+        currentOrderType.setWorkOrders(orderType.getWorkOrders() != null ? orderType.getWorkOrders() : currentOrderType.getWorkOrders());
+
+        return orderTypeRepository.save(currentOrderType);
     }
 
     @Override
     @Transactional
-    public void deleteById(Long id) {
+    public void deleteById(Long id) throws Exception {
+
+        OrderType currentOrderType = orderTypeRepository.findById(id).orElseThrow(() -> new
+                NoSuchElementException("Order Type not found!"));
+
         orderTypeRepository.deleteById(id);
+
+        throw new Exception("Order Type successfully deleted!");
     }
 }

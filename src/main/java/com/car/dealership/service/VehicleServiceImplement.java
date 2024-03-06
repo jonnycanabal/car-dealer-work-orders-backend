@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
-public class VehicleServiceImplement implements VehicleService{
+public class VehicleServiceImplement implements VehicleService {
 
     @Autowired
     private VehicleRepository vehicleRepository;
@@ -21,7 +22,11 @@ public class VehicleServiceImplement implements VehicleService{
 
     @Override
     public Vehicle findById(Long id) {
-        return vehicleRepository.findById(id).get();
+
+        Vehicle currentVehicle = vehicleRepository.findById(id).orElseThrow(() -> new
+                NoSuchElementException("Vehicle not found!"));
+
+        return currentVehicle;
     }
 
     @Override
@@ -33,12 +38,29 @@ public class VehicleServiceImplement implements VehicleService{
     @Override
     @Transactional
     public Vehicle updateVehicle(Long id, Vehicle vehicle) {
-        return vehicleRepository.save(vehicle);
+
+        Vehicle currentVehicle = vehicleRepository.findById(id).orElseThrow(() -> new
+                NoSuchElementException("Vehicle not found!"));
+
+        currentVehicle.setBrand(vehicle.getBrand() != null ? vehicle.getBrand() : currentVehicle.getBrand());
+        currentVehicle.setModel(vehicle.getModel() != null ? vehicle.getModel() : currentVehicle.getModel());
+        currentVehicle.setYear(vehicle.getYear() != null ? vehicle.getYear() : currentVehicle.getYear());
+        currentVehicle.setPlate(vehicle.getPlate() != null ? vehicle.getPlate() : currentVehicle.getPlate());
+        currentVehicle.setColor(vehicle.getColor() != null ? vehicle.getColor() : currentVehicle.getColor());
+        currentVehicle.setMileage(vehicle.getMileage() != null ? vehicle.getMileage() : currentVehicle.getMileage());
+
+        return vehicleRepository.save(currentVehicle);
     }
 
     @Override
     @Transactional
-    public void deleteById(Long id) {
+    public void deleteById(Long id) throws Exception {
+
+        Vehicle currentVehicle = vehicleRepository.findById(id).orElseThrow(() -> new
+                NoSuchElementException("Vehicle not found!"));
+
         vehicleRepository.deleteById(id);
+
+        throw new Exception("Vehicle successfully deleted!");
     }
 }

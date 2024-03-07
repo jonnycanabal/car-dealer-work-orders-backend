@@ -29,6 +29,18 @@ public class VehicleServiceImplement implements VehicleService {
         return currentVehicle;
     }
 
+    public List<Vehicle> findByPlate(String plate) throws Exception {
+
+        List<Vehicle> vehicles = vehicleRepository.findByPlate(plate);
+
+        if (!vehicles.isEmpty()) {
+            return vehicleRepository.findByPlate(plate);
+        }
+
+        throw new Exception("Vehicle not found!");
+
+    }
+
     @Override
     @Transactional
     public Vehicle createVehicle(Vehicle vehicle) {

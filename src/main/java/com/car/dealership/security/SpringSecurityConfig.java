@@ -48,39 +48,41 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         .antMatchers(HttpMethod.POST, "/**").permitAll()/////////////////
                         .antMatchers(HttpMethod.PUT, "/**").permitAll()/////////////////
                         .antMatchers(HttpMethod.DELETE, "/**").permitAll()/////////////////
-//                        .antMatchers(HttpMethod.GET, "/user", "/user/{id}", "/user/search", "/user/search/url").hasAnyRole("USER", "ADMIN")
-//                        .antMatchers(HttpMethod.POST, "/user/create").hasAnyRole("USER", "ADMIN")
-//                        .antMatchers(HttpMethod.POST, "/user/create/admin").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.PUT, "/user/update/{id}").hasAnyRole("USER", "ADMIN")
-//                        .antMatchers(HttpMethod.DELETE, "/user/delete/{id}").hasRole("ADMIN")
-//                        //
-//                        .antMatchers(HttpMethod.GET, "/role", "/role/{id}").hasAnyRole("ADMIN")
-//                        .antMatchers(HttpMethod.POST, "/role/create", "/role/search").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.PUT, "/role/update/{id}").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.DELETE, "/role/delete/{id}").hasRole("ADMIN")
-//                        //
-//                        .antMatchers(HttpMethod.GET, "/product", "/product/{id}", "/product/search", "/product/search/url").hasAnyRole("USER", "ADMIN")
-//                        .antMatchers(HttpMethod.POST, "/product/create", "/product/create-with-photo").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.PUT, "/product/update/{id}", "/product/update-with-photo/{id}").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.DELETE, "/product/delete/{id}").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.GET, "/product/uploads/image/{id}").hasRole("ADMIN")
-//                        //
-//                        .antMatchers(HttpMethod.GET, "/shoppingCart", "/shoppingCart/{id}").hasAnyRole("USER", "ADMIN")
-//                        .antMatchers(HttpMethod.POST, "/shoppingCart/create").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.PUT, "/shoppingCart/update/{id}").hasAnyRole("USER", "ADMIN")
-//                        .antMatchers(HttpMethod.DELETE, "/shoppingCart/delete/{id}").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.GET, "/shoppingCart/{id}/totalValue", "/shoppingCart/invoice/{id}").hasAnyRole("USER", "ADMIN")
-//                        //
-//                        .antMatchers(HttpMethod.GET, "/brand", "/brand/{id}").hasAnyRole("ADMIN")
-//                        .antMatchers(HttpMethod.POST, "/brand/create", "/brand/create-with-photo").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.PUT, "/brand/update/{id}", "/brand/update-with-photo/{id}").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.DELETE, "/brand/delete/{id}").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.GET, "/brand/uploads/image/{id}").hasRole("ADMIN")
-//                        //
-//                        .antMatchers(HttpMethod.GET, "/cartItem", "/cartItem/{id}").hasAnyRole("ADMIN")
-//                        .antMatchers(HttpMethod.POST, "/cartItem/create").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.PUT, "/cartItem/update/{id}").hasRole("ADMIN")
-//                        .antMatchers(HttpMethod.DELETE, "/cartItem/delete/{id}").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.GET, "/user", "/user/{id}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.POST, "/user/create").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.POST, "/user/create/admin").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/user/update/{id}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.DELETE, "/user/delete/{id}").hasRole("ADMIN")
+                        //
+                        .antMatchers(HttpMethod.GET, "/role", "/role/{id}").hasAnyRole("ADMIN")
+                        .antMatchers(HttpMethod.POST, "/role/create", "/role/search").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/role/update/{id}").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.DELETE, "/role/delete/{id}").hasRole("ADMIN")
+                        //
+                        .antMatchers(HttpMethod.GET, "/vehicle", "/vehicle/{id}", "/vehicle/search/url/byPlate/{plate}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.POST, "/vehicle/create").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/vehicle/update/{id}").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.DELETE, "/vehicle/delete/{id}").hasRole("ADMIN")
+                        //
+                        .antMatchers(HttpMethod.GET, "/client", "/client/{id}").hasAnyRole("USER","ADMIN")
+                        .antMatchers(HttpMethod.POST, "/client/create").hasAnyRole("USER","ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/client/update/{id}").hasAnyRole("USER","ADMIN")
+                        .antMatchers(HttpMethod.DELETE, "/client/delete/{id}").hasRole("ADMIN")
+                        //
+                        .antMatchers(HttpMethod.GET, "/workOrder", "/workOrder/{id}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.POST, "/workOrder/create").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/workOrder/update/{id}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.DELETE, "/workOrder/delete/{id}").hasRole("ADMIN")
+                        //
+                        .antMatchers(HttpMethod.GET, "/workOrderItem", "/workOrderItem/{id}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.POST, "/workOrderItem/create").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/workOrderItem/update/{id}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.DELETE, "/workOrderItem/delete/{id}").hasRole("ADMIN")
+                        //
+                        .antMatchers(HttpMethod.GET, "/orderType", "/orderType/{id}").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.POST, "/orderType/create").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/orderType/update/{id}").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.DELETE, "/orderType/delete/{id}").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
                 .addFilter(new JwtValidationFilter(authenticationManager()))

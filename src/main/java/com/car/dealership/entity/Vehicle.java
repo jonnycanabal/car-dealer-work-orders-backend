@@ -25,7 +25,7 @@ public class Vehicle {
     private Integer year;
     private String plate;
     private String color;
-    private String mileage;
+    private Integer mileage;
 
     @JsonIgnoreProperties("vehicle")
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, orphanRemoval = true)

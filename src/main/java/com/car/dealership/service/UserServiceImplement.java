@@ -2,6 +2,7 @@ package com.car.dealership.service;
 
 import com.car.dealership.entity.Role;
 import com.car.dealership.entity.User;
+import com.car.dealership.exceptions.UserDeleteException;
 import com.car.dealership.repository.RoleRepository;
 import com.car.dealership.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,7 +108,7 @@ public class UserServiceImplement implements UserService {
 
         userRepository.deleteById(id);
 
-        throw new Exception("User successfully deleted!");
+        throw new UserDeleteException("User successfully deleted!");
     }
 
     @Override

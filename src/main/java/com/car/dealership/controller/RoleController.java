@@ -27,6 +27,12 @@ public class RoleController {
         return roleService.findById(id);
     }
 
+    @GetMapping("/search/url/byRoleName/{roleName}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Role> findByUrlRoleName(@PathVariable String roleName) throws Exception{
+        return roleService.findByUrlRoleName(roleName);
+    }
+
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Role create(@RequestBody Role role) {

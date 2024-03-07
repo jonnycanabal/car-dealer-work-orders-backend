@@ -34,6 +34,18 @@ public class RoleServiceImplement implements RoleService {
     }
 
     @Override
+    public List<Role> findByUrlRoleName(String roleName) throws Exception {
+
+        List<Role> roles = roleRepository.findByUrlRoleName(roleName);
+
+        if (!roles.isEmpty()){
+            return roleRepository.findByUrlRoleName(roleName);
+        }
+
+        throw new NoSuchElementException("Role not found!");
+    }
+
+    @Override
     @Transactional
     public Role createRole(Role role) {
         return roleRepository.save(role);
@@ -68,4 +80,5 @@ public class RoleServiceImplement implements RoleService {
     public Optional<Role> findByRoleName(String roleName) {
         return roleRepository.findByRoleName(roleName);
     }
+
 }

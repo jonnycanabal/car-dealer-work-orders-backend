@@ -30,6 +30,17 @@ public class ClientServiceImplement implements ClientService {
     }
 
     @Override
+    public List<Client> findByIdentificationCard(Integer identificationCard) throws Exception {
+
+        List<Client> clients = clientRepository.findByIdentificationCard(identificationCard);
+
+        if (!clients.isEmpty()){
+            return clientRepository.findByIdentificationCard(identificationCard);
+        }
+        throw new NoSuchElementException("Client not found!");
+    }
+
+    @Override
     @Transactional
     public Client createClient(Client client) {
         return clientRepository.save(client);
@@ -67,4 +78,5 @@ public class ClientServiceImplement implements ClientService {
 
         throw new Exception("Client successfully deleted!");
     }
+
 }

@@ -27,6 +27,12 @@ public class ClientController {
         return clientService.findById(id);
     }
 
+    @GetMapping("/search/url/byIdentificationCard/{identificationCard}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Client> findByIdentificationCard(@PathVariable Integer identificationCard) throws Exception{
+        return clientService.findByIdentificationCard(identificationCard);
+    }
+
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Client create(@RequestBody Client client) {

@@ -1,5 +1,6 @@
 package com.car.dealership.controller;
 
+import com.car.dealership.dto.ClientDto;
 import com.car.dealership.entity.Client;
 import com.car.dealership.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/client")

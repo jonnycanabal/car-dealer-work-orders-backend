@@ -1,6 +1,7 @@
 package com.car.dealership.entity;
 
 //import com.car.dealership.validation.ExistsByUsername;
+import com.car.dealership.validation.ExistsByUsername;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,11 +29,14 @@ public class User {
 
     private String firstsName;
     private String lastName;
+
+    @Column(unique = true)
     private Integer identificationCard;
+
     private String email;
     private String phoneNumber;
 
-//    @ExistsByUsername
+    @ExistsByUsername
     @Column(unique = true)
     @NotBlank
     @Size(min = 4, max = 12)

@@ -1,0 +1,878 @@
+{
+	"info": {
+		"_postman_id": "d4373bcf-47a3-47df-98c9-ac8a8bbbeb2e",
+		"name": "car-dealer-work-orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21757319"
+	},
+	"item": [
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "viewAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\":\"Nissan\",\r\n    \"model\": \"Frontier\",\r\n    \"year\":2020,\r\n    \"plate\":\"XJT-547\",\r\n    \"color\":\"Naranja\",\r\n    \"mileage\": 25430\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicle/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mileage\": 25500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicle/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPlate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/search/url/byPlate/XJT-547",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"search",
+								"url",
+								"byPlate",
+								"XJT-547"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderType",
+			"item": [
+				{
+					"name": "viewAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/orderType",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orderType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/orderType/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orderType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderName\":\"Reparacion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/orderType/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orderType",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderName\":\"pruebaEliminar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/orderType/update/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orderType",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/orderType/delete/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orderType",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WorkOrder",
+			"item": [
+				{
+					"name": "viewAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/workOrder",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/workOrder/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrder",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicle\":    \r\n    {\r\n        \"id\": 1,\r\n        \"brand\": \"Nissan\",\r\n        \"model\": \"Frontier\",\r\n        \"year\": 2020,\r\n        \"plate\": \"XJT-547\",\r\n        \"color\": \"Naranja\",\r\n        \"mileage\": \"25430\",\r\n        \"workOrders\": [],\r\n        \"createAt\": \"2024-03-06 14:27:45\"\r\n    },\r\n    \"orderTypes\":\r\n    [\r\n        {\r\n            \"id\": 1,\r\n            \"orderName\": \"Reparacion\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/workOrder/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrder",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\":{\r\n                \"id\": 2,\r\n        \"firstsName\": \"Jonny\",\r\n        \"middleName\": \"Mauricio\",\r\n        \"lastName\": \"Canabal\",\r\n        \"secondLastName\": \"Ospina\",\r\n        \"identificationCard\": 1115085745,\r\n        \"email\": \"jonnycanabal@gmail.com\",\r\n        \"phoneNumber\": \"3183854969\",\r\n        \"placeOfResidence\": \"Buga Valle\",\r\n        \"address\": \"Calle 12 # 10-30\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/workOrder/update/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrder",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WorkOrderItem",
+			"item": [
+				{
+					"name": "viewAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/workOrderItem",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrderItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/workOrderItem/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrderItem",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"workOrder\": {\r\n        \"id\": 2\r\n    },\r\n    \"orderType\": {\r\n        \"id\": 1\r\n    },\r\n    \"description\": \"Revision aire acondicionado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/workOrderItem/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrderItem",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Cambio de Aceite\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/workOrderItem/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrderItem",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/workOrderItem/delete/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"workOrderItem",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "viewAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/client/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstsName\":\"Jonny\",\r\n    \"middleName\":\"Mauricio\",\r\n    \"lastName\":\"Canabal\",\r\n    \"secondLastName\":\"Ospina\",\r\n    \"identificationCard\": 1115085745,\r\n    \"email\":\"jonnycanabal@gmail.com\",\r\n    \"phoneNumber\":\"3183854969\",\r\n    \"placeOfResidence\":\"Buga Valle\",\r\n    \"address\":\"Calle 12 # 10-30\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/client/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"placeOfResidence\":\"Buga Valle del Cauca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/client/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/client/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "viewAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/role",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/role/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\":\"ROLE_USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/role/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udpate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\":\"ROLE_USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/role/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/role/delete/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Admin\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "viewAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstsName\":\"Jonny\",\r\n    \"lastName\":\"Canabal\",\r\n    \"identificationCard\": 1115085647,\r\n    \"email\":\"jmco@gmail.com\",\r\n    \"phoneNumber\":\"+57 3183254785\",\r\n    \"username\":\"JonnyAdmin2\",\r\n    \"password\":\"12345\",\r\n    \"admin\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/create/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"create",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/update/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/delete/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

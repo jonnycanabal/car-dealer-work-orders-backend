@@ -2,6 +2,7 @@ package com.car.dealership.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,30 +14,26 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "workOrders")
-public class WorkOrder {
+@Table(name = "clients")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    @JsonIgnoreProperties({"workOrders"})
-    private Client client;
+    private String firstsName;
+    private String middleName;
+    private String lastName;
+    private String secondLastName;
+    private Integer identificationCard;
+    private String email;
+    private String phoneNumber;
+    private String placeOfResidence;
+    private String address;
 
-    @ManyToOne
-    @JoinColumn(name = "vehicle_id")
-    @JsonIgnoreProperties({"workOrders"})
-    private Vehicle vehicle;
-
-    @ManyToMany
-    @JsonIgnoreProperties("workOrders")
-    private List<OrderType> orderTypes = new ArrayList<>();
-
-    @OneToMany(mappedBy = "workOrder", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties({"workOrder"})
-    private List<WorkOrderItem> workOrderItems = new ArrayList<>();
+    @OneToMany(mappedBy = "client")
+    @JsonIgnoreProperties({"client"})
+    private List<WorkOrder> workOrders = new ArrayList<>();
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "America/Bogota")
     @Column(name = "create_at")
@@ -47,4 +44,5 @@ public class WorkOrder {
     public void prePersist() {
         this.createAt = new Date();
     }
+
 }

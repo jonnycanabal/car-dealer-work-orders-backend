@@ -44,6 +44,7 @@ public class WorkOrderServiceImplement implements WorkOrderService {
         WorkOrder currentWorkOrder = workOrderRepository.findById(id).orElseThrow(() -> new
                 NoSuchElementException("Work Order not found!"));
 
+        currentWorkOrder.setClient(workOrder.getClient() != null ? workOrder.getClient() : currentWorkOrder.getClient());
         currentWorkOrder.setVehicle(workOrder.getVehicle() != null ? workOrder.getVehicle() : currentWorkOrder.getVehicle());
 
         if (workOrder.getOrderTypes() != null) {

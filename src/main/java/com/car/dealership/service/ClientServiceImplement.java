@@ -1,11 +1,13 @@
 package com.car.dealership.service;
 
+import com.car.dealership.dto.ClientDto;
 import com.car.dealership.entity.Client;
 import com.car.dealership.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 

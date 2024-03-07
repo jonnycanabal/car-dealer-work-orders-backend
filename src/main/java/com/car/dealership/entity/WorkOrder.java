@@ -22,7 +22,7 @@ public class WorkOrder {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
-    @JsonIgnoreProperties({"workOrders"})
+    @JsonIgnoreProperties({"workOrders","id", "identificationCard", "address"})
     private Client client;
 
     @ManyToOne

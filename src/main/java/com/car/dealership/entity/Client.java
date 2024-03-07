@@ -25,7 +25,10 @@ public class Client {
     private String middleName;
     private String lastName;
     private String secondLastName;
+
+    @Column(unique = true)
     private Integer identificationCard;
+
     private String email;
     private String phoneNumber;
     private String placeOfResidence;

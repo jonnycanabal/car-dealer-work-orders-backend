@@ -7,6 +7,11 @@ para iniciar la prueba se debe ejecutar en un terminal
 Para realizar las pruebas el collection de postman esta en la carpeta principal web-store en:
  - /PostmanCollection
 
+La Idea del proyecto es Logear con Usuario, previamente un admin debe crear los OrderType ('Mantenimiento',
+'Pintura', 'Reparación'). Seguidamente se crea el Cliente, Vehículo, La orden de trabajo, a la cual se
+va asociar dicho cliente y vehículo y un orderType, posteriormente con el endpoint de WorkOrderItem 
+se le da una descripcción
+
 Usuario y contraseña por defecto:
  - username: "Admin"
  - password: "12345"

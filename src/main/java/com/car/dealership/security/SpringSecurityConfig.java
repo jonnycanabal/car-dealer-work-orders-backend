@@ -48,13 +48,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         .antMatchers(HttpMethod.POST, "/**").permitAll()/////////////////
                         .antMatchers(HttpMethod.PUT, "/**").permitAll()/////////////////
                         .antMatchers(HttpMethod.DELETE, "/**").permitAll()/////////////////
-                        .antMatchers(HttpMethod.GET, "/user", "/user/{id}").hasAnyRole("USER", "ADMIN")
+                        .antMatchers(HttpMethod.GET, "/user", "/user/{id}","/user/search/url/byUsername/{username}").hasAnyRole("USER", "ADMIN")
                         .antMatchers(HttpMethod.POST, "/user/create").hasAnyRole("USER", "ADMIN")
                         .antMatchers(HttpMethod.POST, "/user/create/admin").hasRole("ADMIN")
                         .antMatchers(HttpMethod.PUT, "/user/update/{id}").hasAnyRole("USER", "ADMIN")
                         .antMatchers(HttpMethod.DELETE, "/user/delete/{id}").hasRole("ADMIN")
                         //
-                        .antMatchers(HttpMethod.GET, "/role", "/role/{id}").hasAnyRole("ADMIN")
+                        .antMatchers(HttpMethod.GET, "/role", "/role/{id}", "/role/search/url/byRoleName/{roleName}").hasAnyRole("ADMIN")
                         .antMatchers(HttpMethod.POST, "/role/create", "/role/search").hasRole("ADMIN")
                         .antMatchers(HttpMethod.PUT, "/role/update/{id}").hasRole("ADMIN")
                         .antMatchers(HttpMethod.DELETE, "/role/delete/{id}").hasRole("ADMIN")
@@ -64,7 +64,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         .antMatchers(HttpMethod.PUT, "/vehicle/update/{id}").hasRole("ADMIN")
                         .antMatchers(HttpMethod.DELETE, "/vehicle/delete/{id}").hasRole("ADMIN")
                         //
-                        .antMatchers(HttpMethod.GET, "/client", "/client/{id}").hasAnyRole("USER","ADMIN")
+                        .antMatchers(HttpMethod.GET, "/client", "/client/{id}","/client/search/url/byIdentificationCard/{identificationCard}").hasAnyRole("USER","ADMIN")
                         .antMatchers(HttpMethod.POST, "/client/create").hasAnyRole("USER","ADMIN")
                         .antMatchers(HttpMethod.PUT, "/client/update/{id}").hasAnyRole("USER","ADMIN")
                         .antMatchers(HttpMethod.DELETE, "/client/delete/{id}").hasRole("ADMIN")

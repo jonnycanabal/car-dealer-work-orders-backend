@@ -1,6 +1,7 @@
 package com.car.dealership.service;
 
 import com.car.dealership.entity.User;
+import org.springframework.data.repository.query.Param;
 
 import javax.xml.bind.ValidationException;
 import java.util.List;
@@ -21,4 +22,6 @@ public interface UserService {
     boolean existsByUsername(String username);
 
     Optional<User> findByUsername(String username);
+
+    List<User> findByUrlUsername(String username) throws Exception;
 }

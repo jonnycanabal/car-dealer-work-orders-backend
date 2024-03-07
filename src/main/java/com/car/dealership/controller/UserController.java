@@ -28,6 +28,12 @@ public class UserController {
         return userService.findById(id);
     }
 
+    @GetMapping("/search/url/byUsername/{username}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<User> findByUrlUsername(@PathVariable String username) throws Exception{
+        return userService.findByUrlUsername(username);
+    }
+
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public User create(@RequestBody User user) throws Exception {

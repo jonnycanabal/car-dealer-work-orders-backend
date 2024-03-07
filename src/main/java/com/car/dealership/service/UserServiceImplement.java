@@ -43,6 +43,18 @@ public class UserServiceImplement implements UserService {
     }
 
     @Override
+    public List<User> findByUrlUsername(String username) throws Exception {
+
+        List<User> users = userRepository.findByUrlUsername(username);
+
+        if (!users.isEmpty()){
+            return userRepository.findByUrlUsername(username);
+        }
+
+        throw new NoSuchElementException("User not found!");
+    }
+
+    @Override
     @Transactional
     public User createUser(User user) throws Exception {
 
@@ -120,4 +132,5 @@ public class UserServiceImplement implements UserService {
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+
 }

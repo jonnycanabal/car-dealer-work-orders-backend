@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres_car_dealer_work_orders:
+    container_name: "postgres_car_dealer_work_orders"
+    image: "postgres"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "12345"
+      POSTGRES_DB: "car-dealer-work-orders"
+    networks:
+      - carDealerWorkOrdersNetwork
+networks:
+  carDealerWorkOrdersNetwork:
+    driver: bridge
+volumes:
+  postgres-data:

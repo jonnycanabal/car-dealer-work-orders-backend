@@ -44,10 +44,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests(requests -> requests
-                        .antMatchers(HttpMethod.GET, "/**").permitAll()/////////////////
-                        .antMatchers(HttpMethod.POST, "/**").permitAll()/////////////////
-                        .antMatchers(HttpMethod.PUT, "/**").permitAll()/////////////////
-                        .antMatchers(HttpMethod.DELETE, "/**").permitAll()/////////////////
                         .antMatchers(HttpMethod.GET, "/user", "/user/{id}","/user/search/url/byUsername/{username}").hasAnyRole("USER", "ADMIN")
                         .antMatchers(HttpMethod.POST, "/user/create").hasAnyRole("USER", "ADMIN")
                         .antMatchers(HttpMethod.POST, "/user/create/admin").hasRole("ADMIN")
@@ -60,8 +56,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         .antMatchers(HttpMethod.DELETE, "/role/delete/{id}").hasRole("ADMIN")
                         //
                         .antMatchers(HttpMethod.GET, "/vehicle", "/vehicle/{id}", "/vehicle/search/url/byPlate/{plate}").hasAnyRole("USER", "ADMIN")
-                        .antMatchers(HttpMethod.POST, "/vehicle/create").hasRole("ADMIN")
-                        .antMatchers(HttpMethod.PUT, "/vehicle/update/{id}").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.POST, "/vehicle/create").hasAnyRole("USER","ADMIN")
+                        .antMatchers(HttpMethod.PUT, "/vehicle/update/{id}").hasAnyRole("USER","ADMIN")
                         .antMatchers(HttpMethod.DELETE, "/vehicle/delete/{id}").hasRole("ADMIN")
                         //
                         .antMatchers(HttpMethod.GET, "/client", "/client/{id}","/client/search/url/byIdentificationCard/{identificationCard}").hasAnyRole("USER","ADMIN")
@@ -79,7 +75,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                         .antMatchers(HttpMethod.PUT, "/workOrderItem/update/{id}").hasAnyRole("USER", "ADMIN")
                         .antMatchers(HttpMethod.DELETE, "/workOrderItem/delete/{id}").hasRole("ADMIN")
                         //
-                        .antMatchers(HttpMethod.GET, "/orderType", "/orderType/{id}").hasRole("ADMIN")
+                        .antMatchers(HttpMethod.GET, "/orderType", "/orderType/{id}").hasAnyRole("USER", "ADMIN")
                         .antMatchers(HttpMethod.POST, "/orderType/create").hasRole("ADMIN")
                         .antMatchers(HttpMethod.PUT, "/orderType/update/{id}").hasRole("ADMIN")
                         .antMatchers(HttpMethod.DELETE, "/orderType/delete/{id}").hasRole("ADMIN")

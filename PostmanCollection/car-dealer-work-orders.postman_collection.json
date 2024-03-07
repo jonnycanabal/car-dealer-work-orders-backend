@@ -12,6 +12,16 @@
 				{
 					"name": "viewAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -47,8 +57,40 @@
 					"response": []
 				},
 				{
+					"name": "findByPlate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/vehicle/search/url/byPlate/XJT-547",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"search",
+								"url",
+								"byPlate",
+								"XJT-547"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -122,28 +164,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "findByPlate",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/vehicle/search/url/byPlate/XJT-547",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"vehicle",
-								"search",
-								"url",
-								"byPlate",
-								"XJT-547"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -153,6 +173,16 @@
 				{
 					"name": "viewAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -190,11 +220,21 @@
 				{
 					"name": "create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbiIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9BRE1JTlwifSx7XCJhdXRob3JpdHlcIjpcIlJPTEVfVVNFUlwifV0iLCJ1c2VybmFtZSI6IkFkbWluIiwiZXhwIjoxNzA5ODAxNTAzLCJpYXQiOjE3MDk3OTc5MDN9.MaorwVicKzYk-bAd7B_AVR-9rN2_dSqaXmVuhKxpzyY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"orderName\":\"Reparacion\"\r\n}",
+							"raw": "{\r\n    \"orderName\":\"Reparación\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -272,6 +312,16 @@
 				{
 					"name": "viewAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -309,11 +359,21 @@
 				{
 					"name": "create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"vehicle\":    \r\n    {\r\n        \"id\": 1,\r\n        \"brand\": \"Nissan\",\r\n        \"model\": \"Frontier\",\r\n        \"year\": 2020,\r\n        \"plate\": \"XJT-547\",\r\n        \"color\": \"Naranja\",\r\n        \"mileage\": \"25430\",\r\n        \"workOrders\": [],\r\n        \"createAt\": \"2024-03-06 14:27:45\"\r\n    },\r\n    \"orderTypes\":\r\n    [\r\n        {\r\n            \"id\": 1,\r\n            \"orderName\": \"Reparacion\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"client\":{\r\n        \"id\": 1,\r\n        \"firstsName\": \"Jonny\",\r\n        \"middleName\": \"Mauricio\",\r\n        \"lastName\": \"Canabal\",\r\n        \"secondLastName\": \"Ospina\",\r\n        \"identificationCard\": 1115085745,\r\n        \"email\": \"jonnycanabal@gmail.com\",\r\n        \"phoneNumber\": \"3183854969\",\r\n        \"placeOfResidence\": \"Buga Valle\",\r\n        \"address\": \"Calle 12 # 10-30\"\r\n    },\r\n    \"vehicle\":    \r\n    {\r\n        \"id\": 1,\r\n        \"brand\": \"Nissan\",\r\n        \"model\": \"Frontier\",\r\n        \"year\": 2020,\r\n        \"plate\": \"XJT-547\",\r\n        \"color\": \"Naranja\",\r\n        \"mileage\": \"25430\"\r\n    },\r\n    \"orderTypes\":\r\n    [\r\n        {\r\n            \"id\": 1,\r\n            \"orderName\": \"Mantenimiento\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -362,6 +422,14 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -371,6 +439,16 @@
 				{
 					"name": "viewAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -408,11 +486,21 @@
 				{
 					"name": "create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"workOrder\": {\r\n        \"id\": 2\r\n    },\r\n    \"orderType\": {\r\n        \"id\": 1\r\n    },\r\n    \"description\": \"Revision aire acondicionado\"\r\n}",
+							"raw": "{\r\n    \"workOrder\": {\r\n        \"id\": 1\r\n    },\r\n    \"orderType\": {\r\n        \"id\": 1\r\n    },\r\n    \"description\": \"Mantenimiento preventivo y correctivo, Cambio de Aceite, filtro de aire y lubricación de partes\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -490,6 +578,16 @@
 				{
 					"name": "viewAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE3NDAsImlhdCI6MTcwOTc5ODE0MH0.sCu-JJTssvnvdUbspGwzNfT7yUD4RsHlC-RXtmzUD_Y",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -525,8 +623,40 @@
 					"response": []
 				},
 				{
+					"name": "findByIdentificationCard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/client/search/url/byIdentificationCard/1115085745",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client",
+								"search",
+								"url",
+								"byIdentificationCard",
+								"1115085745"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE0MTcsImlhdCI6MTcwOTc5NzgxN30.7zR_uGujwI_vDRIcEUyvMGLt7PN-_F3KLz8tFmF0qcI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -638,6 +768,28 @@
 							"path": [
 								"role",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByUrlRoleName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/role/search/url/byRoleName/ROLE_ADMIN",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"role",
+								"search",
+								"url",
+								"byRoleName",
+								"ROLE_ADMIN"
 							]
 						}
 					},
@@ -760,6 +912,16 @@
 				{
 					"name": "viewAll",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb25ueSIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9VU0VSXCJ9XSIsInVzZXJuYW1lIjoiSm9ubnkiLCJleHAiOjE3MDk4MDE0MTcsImlhdCI6MTcwOTc5NzgxN30.7zR_uGujwI_vDRIcEUyvMGLt7PN-_F3KLz8tFmF0qcI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -795,7 +957,68 @@
 					"response": []
 				},
 				{
+					"name": "findByUrlUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/search/url/byUsername/Admin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"search",
+								"url",
+								"byUsername",
+								"Admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbiIsImF1dGhvcml0aWVzIjoiW3tcImF1dGhvcml0eVwiOlwiUk9MRV9BRE1JTlwifSx7XCJhdXRob3JpdHlcIjpcIlJPTEVfVVNFUlwifV0iLCJ1c2VybmFtZSI6IkFkbWluIiwiZXhwIjoxNzA5ODAxMjk1LCJpYXQiOjE3MDk3OTc2OTV9.CdeTPfBPierrHyixYu2aVKHr3wQyEDZYA9K2qNzaaQQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstsName\":\"Jonny\",\r\n    \"lastName\":\"Canabal\",\r\n    \"identificationCard\": 1115085647,\r\n    \"email\":\"jmco@gmail.com\",\r\n    \"phoneNumber\":\"+57 3183254785\",\r\n    \"username\":\"Jonny\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/create/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"create",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAdmin",
 					"request": {
 						"method": "POST",
 						"header": [],
